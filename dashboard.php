@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Ayyie Yang Cantik & Keren 🖤</title>
+    <meta name="description" content="Sebuah surat cinta interaktif dan romantis khusus untuk Ayyie yang sangat spesial.">
+    <link rel="stylesheet" href="style.css">
+    <!-- SVG Icon definitions to keep code clean and modular -->
+    <svg style="display: none;">
+        <symbol id="icon-heart" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </symbol>
+        <symbol id="icon-music-on" viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </symbol>
+        <symbol id="icon-music-off" viewBox="0 0 24 24">
+            <path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73l6 6L21 20.73 4.27 3zM14 7h4V3h-6v5.18l2 2V7z"/>
+        </symbol>
+        <symbol id="icon-broken-heart" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            <path d="M12 3v18" stroke="#000" stroke-width="2" stroke-dasharray="3,3"/>
+        </symbol>
+        <symbol id="icon-skull-heart" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.5h-2v-2h2v2zm0-4.5h-2V7h2v6z"/>
+        </symbol>
+    </svg>
+</head>
+<body>
+
+    <!-- Background vibe -->
+    <div class="goth-vibe-bg"></div>
+    <canvas id="canvas-hearts"></canvas>
+
+    <!-- Romantic Ambient Background Music -->
+    <audio id="bg-music" loop preload="auto">
+        <!-- Royalty-free gorgeous piano and violin melody -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <button class="music-toggle" id="music-btn">
+        <span class="music-icon" id="music-svg-placeholder">
+            <svg width="18" height="18" fill="currentColor"><use href="#icon-music-off"/></svg>
+        </span>
+        <span id="music-text">Putar Musik 🎵</span>
+    </button>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <div class="romantic-card" id="proposal-card">
+            <!-- Decorative Corners -->
+            <div class="goth-border-decor top-left"></div>
+            <div class="goth-border-decor top-right"></div>
+            <div class="goth-border-decor bottom-left"></div>
+            <div class="goth-border-decor bottom-right"></div>
+
+            <!-- Emo Badges -->
+            <div class="emo-badge">🖤 Ayyie</div>
+            <div class="emo-badge-right">Emo Vibe ✨</div>
+
+            <!-- STAGE -1: Pintu Gerbang Password untuk Ayyie -->
+            <div class="step-content active" id="step-gate">
+                <h1 class="emo-title">🔐 Surat Cinta Terkunci</h1>
+                <p class="emo-text">
+                    Masukkan kata kunci rahasia untuk membuka surat cinta spesial dari Aell... 🖤
+                </p>
+                <div class="login-form" style="margin-top: 20px;">
+                    <input type="password" id="gate-password" class="goth-input" placeholder="Masukkan password rahasia..." required style="text-align: center;">
+                    <button class="goth-btn" id="btn-unlock-gate" style="width: 100%; margin-top: 15px;">
+                        Buka Surat 🔑🖤
+                    </button>
+                </div>
+                <p style="font-family: var(--font-emo); font-size: 0.75rem; color: var(--text-muted); margin-top: 20px;">
+                    *Hint: Password yang dikasih Aell ke kamu (misal: sayangku123)
+                </p>
+            </div>
+
+            <!-- STAGE 0: Amplop Pembuka (Envelope) -->
+            <div class="step-content" id="step-envelope">
+                <h1 class="emo-title">Ada pesan rahasia...</h1>
+                <p class="emo-text">Seseorang mengirimkan surat cinta khusus buat kamu. Silakan klik amplop di bawah untuk membukanya...</p>
+                
+                <div class="envelope-container" id="envelope-clickable">
+                    <div class="envelope" id="main-envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-letter">
+                            <svg width="35" height="35" fill="var(--primary-neon)"><use href="#icon-heart"/></svg>
+                            <span style="font-family: var(--font-emo); font-size: 0.8rem; margin-top: 10px; color: #fff;">READ ME 🖤</span>
+                        </div>
+                        <div class="goth-seal">
+                            <svg><use href="#icon-heart"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-family: var(--font-emo); font-size: 0.8rem; color: var(--accent-neon); margin-top: 15px; letter-spacing: 1px;">*klik segel merah untuk membuka</p>
+            </div>
+
+            <!-- STAGE 1: Memori / Kenapa Aku Suka Kamu -->
+            <div class="step-content" id="step-memories">
+                <h2 class="emo-title">Kenapa Aku Suka Kamu?</h2>
+                <div class="carousel-box">
+                    
+                    <!-- Slide 1: Makeup Emo -->
+                    <div class="carousel-slide active" data-index="0">
+                        <div class="goth-card-inner">
+                            <div class="emo-makeup-icon">💄🖤</div>
+                            <h3 style="color: var(--primary-neon); margin-bottom: 8px; font-weight: 600;">Jago Make-up & Super Aesthetic</h3>
+                            <p class="emo-text" style="margin-bottom: 0; font-size: 0.95rem;">
+                                Pertama kali aku liat kamu, gaya Emo kamu yang keren dan hasil make-up kamu yang super aesthetic langsung bikin mataku gak bisa kedip. Kamu punya style yang unik, berani, dan luar biasa cantik!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Emo Style & Attitude -->
+                    <div class="carousel-slide" data-index="1">
+                        <div class="goth-card-inner">
+                            <div class="emo-makeup-icon">⚡🎸</div>
+                            <h3 style="color: var(--accent-neon); margin-bottom: 8px; font-weight: 600;">Gayamu yang Bikin Jatuh Hati</h3>
+                            <p class="emo-text" style="margin-bottom: 0; font-size: 0.95rem;">
+                                Di balik gaya berpakaian kamu yang misterius, gelap, dan cool, ada kepribadian yang super manis dan ramah. Cara kamu tersenyum itu bener-bener kontras yang paling indah di mataku.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Emo Connection -->
+                    <div class="carousel-slide" data-index="2">
+                        <div class="goth-card-inner">
+                            <div class="emo-makeup-icon">🌹🖤</div>
+                            <h3 style="color: var(--secondary-neon); margin-bottom: 8px; font-weight: 600;">Kamulah Yang Terbaik</h3>
+                            <p class="emo-text" style="margin-bottom: 0; font-size: 0.95rem;">
+                                Aku kagum dengan cara kamu mengekspresikan diri secara jujur. Bagiku, kamu bukan cuma cewek emo biasa. Kamu adalah karya seni terindah yang pernah aku temuin, Ayyie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="nav-arrow" id="btn-prev-slide">&lt;</button>
+                    <div class="carousel-dots">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                    </div>
+                    <button class="nav-arrow" id="btn-next-slide">&gt;</button>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <button class="goth-btn" id="btn-to-step2">
+                        Lanjut Ceritanya 🖤
+                    </button>
+                </div>
+            </div>
+
+            <!-- STAGE 2: Love Meter Ajaib -->
+            <div class="step-content" id="step-lovemeter">
+                <h2 class="emo-title">Love Meter Test 🧪</h2>
+                <p class="emo-text">
+                    Menurut kamu seberapa besar rasa sayangku ke kamu, Ayyie? Coba tebak dengan menggeser slider di bawah ini!
+                </p>
+
+                <div class="slider-container">
+                    <div class="love-meter-value" id="meter-val">0%</div>
+                    
+                    <div class="meter-wrapper">
+                        <div class="meter-badge" id="meter-tag">0%</div>
+                        <input type="range" min="0" max="100" value="0" class="goth-slider" id="love-slider">
+                    </div>
+
+                    <div class="meter-labels">
+                        <span>Biasa Aja (0%)</span>
+                        <span>Sayang Banget (100%)</span>
+                    </div>
+                </div>
+
+                <p class="emo-code-text" id="love-status-msg">Geser slidernya ke kanan untuk melihat keajaiban...</p>
+
+                <div>
+                    <button class="goth-btn" id="btn-to-step3" style="display: none;">
+                        Ada Pertanyaan Penting... 🌹
+                    </button>
+                </div>
+            </div>
+
+            <!-- STAGE 3: Proposal Card (Will You Be My Emo Princess?) -->
+            <div class="step-content" id="step-proposal">
+                <h2 class="emo-title">Dear Ayyie... 🖤</h2>
+                <p class="emo-text" style="font-size: 1.05rem; color: #f3effa; margin-bottom: 15px; font-style: italic; line-height: 1.6; padding: 0 10px;">
+                    "Aku nggak bisa janji jadi yang paling sempurna, tapi aku bisa janji untuk selalu berusaha jadi yang terbaik buat kamu. -aell untuk ayyie 30 mei 2026"
+                </p>
+                <div class="cursive-love" style="font-size: 2.8rem; margin: 15px 0 10px;">can i be your gf?</div>
+
+                <div class="proposal-box" id="proposal-buttons" style="margin-top: 20px;">
+                    <button class="goth-btn" id="btn-yes">
+                        <svg width="18" height="18" fill="currentColor" style="vertical-align: middle;"><use href="#icon-heart"/></svg>
+                        YES 🖤
+                    </button>
+                    <button class="goth-btn" id="btn-no">
+                        NO 🥺
+                    </button>
+                </div>
+            </div>
+
+            <!-- STAGE 4: Celebration & Form Surat Balasan -->
+            <div class="step-content" id="step-celebration">
+                <div class="celebration-anim">
+                    <svg width="100" height="100" fill="var(--primary-neon)"><use href="#icon-heart"/></svg>
+                </div>
+                <h2 class="emo-title" style="font-size: 2.2rem;">YEAAAAY! 🖤🌹 🎉</h2>
+                <div class="cursive-love" style="font-size: 2.5rem; margin: 5px 0;">Official Emo Couple!</div>
+                <p class="emo-text" style="color: #fff; font-size: 0.95rem; line-height: 1.7; text-align: justify; padding: 0 5px; margin-bottom: 25px;">
+                    Makasi yaa sayang udah nerima aku. Jujur aja, sejak kamu bilang iya, rasanya jantungku nggak berhenti salto dan pikiranku isinya kamu terus. Aku sampai bingung gimana cara ngejelasin rasa seneng ini, karena terlalu besar buat diungkapin dengan kata-kata. Rasanya kayak semua lagu cinta tiba-tiba relate, semua langit jadi lebih cerah, dan semua hari mendadak punya alasan buat dijalani. Aku janji bakal jagain hati yang udah kamu kasih ke aku sebaik mungkin. Mulai sekarang, izinin aku jadi orang yang selalu ada di samping kamu, nemenin setiap cerita, setiap tawa, bahkan setiap air mata yang mungkin datang. Karena buat aku, kamu bukan cuma seseorang yang aku suka, tapi seseorang yang pengen aku perjuangin setiap harinya. Jadi siap-siap ya, karena mulai hari ini ada satu orang yang bakal selalu ngucapin selamat pagi, ngingetin makan, dan sayang banget sama kamu. 💞🥺✨🌹💕
+                </p>
+
+                <div class="success-letter-box">
+                    <p>Tulis Surat Balasanmu 💌</p>
+                    <div class="reply-form" id="reply-letter-form">
+                        <label for="love-note">Kasih aku pesan manis atau harapan kamu ke depan:</label>
+                        <textarea class="goth-textarea" id="love-note" placeholder="Tulis pesan manis kamu di sini ya Ayyie... 🖤"></textarea>
+                        
+                        <button class="goth-btn" id="btn-send-reply">
+                            Kirim Surat Balasan 🕊️
+                        </button>
+                    </div>
+                    
+                    <div id="reply-sent-msg" style="display: none; padding: 15px 0;">
+                        <p style="font-family: var(--font-emo); font-size: 1.1rem; color: var(--accent-neon); margin-bottom: 5px;">Surat Balasan Terkirim! 🖤</p>
+                        <span style="font-size: 0.9rem; color: var(--text-muted);">Pesan manis kamu udah tersimpan rahasia di hatiku. Terima kasih banyak, Emo Princess-ku! 🌹🎸</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Alert / Notification Toast -->
+    <div class="toast-msg" id="toast">
+        <svg width="20" height="20" fill="var(--accent-neon)"><use href="#icon-heart"/></svg>
+        <span id="toast-text">Notifikasi</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
